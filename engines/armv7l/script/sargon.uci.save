@@ -1,0 +1,24 @@
+[Original]
+Plymax = 2
+NoBook = FALSE
+NoRandom = FALSE
+
+[1 Level]
+Plymax = 1
+NoBook = FALSE
+NoRandom = FALSE
+
+[2 Level]
+Plymax = 2
+NoBook = FALSE
+NoRandom = FALSE
+
+[3 Level]
+Plymax = 3
+NoBook = FALSE
+NoRandom = FALSE
+
+[4 Level]
+Plymax = 4
+NoBook = FALSE
+NoRandom = FALSE

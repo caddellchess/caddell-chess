@@ -1,0 +1,33 @@
+[0-speed]
+speed = 0
+level = 4
+PicoTimeControl = 90
+
+[1-1s move]
+level = 0
+PicoTimeControl = 1
+
+[2-<15s move]
+level = 1
+PicoTimeControl = 15
+
+[3-<40s move]
+level = 2
+PicoTimeControl = 40
+
+[4-<90s move]
+level = 3
+PicoTimeControl = 90
+
+[5-<4m move]
+level = 4
+PicoTimeControl = 240
+
+;[6-<40m move]
+;level = 5
+;PicoTimeControl = 02 999 02 999
+
+;[7-<4h move]
+;level = 6
+;PicoTimeControl = 02 999 02 999
+

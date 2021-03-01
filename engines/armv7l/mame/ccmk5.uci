@@ -1,0 +1,45 @@
+[00-speed]
+speed = 0
+level = 000100
+PicoTimeControl = 60
+
+[01-1s move]
+level = 000001
+PicoTimeControl = 1
+
+[02-3s move]
+level = 000003
+PicoTimeControl = 3
+
+[03-5s move]
+level = 000005
+PicoTimeControl = 5
+
+[04-10s move]
+level = 000010
+PicoTimeControl = 10
+
+[05-30s move]
+level = 000030
+PicoTimeControl = 30
+
+[06-1m move]
+level = 000100
+PicoTimeControl = 60
+
+[07-3m move]
+level = 000300
+PicoTimeControl = 180
+
+[08-5m move]
+level = 000500
+PicoTimeControl = 300
+
+[09-10m move]
+level = 001000
+PicoTimeControl = 600
+
+;[10-1h move]
+;level = 010000
+;PicoTimeControl = 02 999 02 999
+

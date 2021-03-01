@@ -1,0 +1,41 @@
+[0-speed]
+speed = 0
+level = 6
+PicoTimeControl = 60
+
+[1-7s move]
+level = 1
+PicoTimeControl = 7
+
+[2-13s move]
+level = 2
+PicoTimeControl = 13
+
+[3-19s move]
+level = 3
+PicoTimeControl = 19
+
+[4-24s move]
+level = 4
+PicoTimeControl = 24
+
+[5-30s move]
+level = 5
+PicoTimeControl = 30
+
+[6-1m move]
+level = 6
+PicoTimeControl = 60
+
+[7-2m move]
+level = 7
+PicoTimeControl = 120
+
+[8-3m move]
+level = 8
+PicoTimeControl = 180
+
+;[9-Infinite]
+;level = 9
+;PicoTimeControl = 02 999 02 999
+

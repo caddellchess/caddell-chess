@@ -1,0 +1,26 @@
+{
+  "name": "caddell-chess",
+  "version": "0.9.0",
+  "description": "A front end to chess engines that support the UCI protocol, written in Javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caddell Chess <caddellchess@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "chess-tools": "git+https://github.com/caddellchess/chess-tools#4dec6e44b956abf55985592fe9127136cc3de805",
+    "chess.js": "^0.11.0",
+    "express": "^4.17.1",
+    "js-ini": "^1.3.0",
+    "nextion": "git+https://github.com/caddellchess/nextion#effc22ac4e38836ca93f4d9357d2fe7537f58522",
+    "node-uci": "^1.3.4",
+    "polyglot-chess": "git+https://github.com/johnfontaine/polyglot.git#c1bca6e9eda8646d8c9535338844875ceb25ae92",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "serialport": "^9.0.3"
+  }
+}

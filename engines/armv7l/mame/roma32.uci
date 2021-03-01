@@ -1,0 +1,53 @@
+;[Level Speed]
+;speed = 100
+;level = 10
+;PicoTimeControl = ?
+
+[00-1s move]
+level = 0
+PicoTimeControl = 1
+
+[01-2s move]
+level = 1
+PicoTimeControl = 2
+
+[02-3s move]
+level = 2
+PicoTimeControl = 3
+
+[03-5s move]
+level = 3
+PicoTimeControl = 5
+
+[04-10s move]
+level = 4
+PicoTimeControl = 10
+
+[05-2m move]
+level = 5
+PicoTimeControl = 120
+
+[06-B 5mins]
+level = 32
+PicoTimeControl = 5 1
+
+[07-B-10mins]
+level = 34
+PicoTimeControl = 10 1
+
+[08-B-30mins]
+level = 37
+PicoTimeControl = 30 1
+
+[09-40/120m]
+level = 40
+PicoTimeControl = 40 120 1
+
+[10-60/120m]
+level = 47
+PicoTimeControl = 60 120 1
+
+;[99-Analysis]
+;level = 99
+;PicoTimeControl = 02 999 02 999
+

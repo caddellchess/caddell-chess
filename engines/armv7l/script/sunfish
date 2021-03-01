@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /opt/picochess/engines/script_engines/sunfish
+python3 uci.py

@@ -1,0 +1,26 @@
+.board {
+  font-family: 'Lato', sans-serif;
+  flex: 1;
+  /*background-color: #607592;*/
+  background-color: #6A7B8C;
+  /*background-color: #7186a3;*/
+  color: #bec7d4;
+  padding: 0px 0px 0px 35px;
+  /*height: 100%;*/
+  width: 564px;
+  /*border-right: 2px solid #40608c;*/
+}
+
+.board > div > div {
+  border: 2px solid #1c4a8a;
+}
+
+.fen {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.fen::before {
+  content: "FEN: ";
+  font-weight: bold;
+}

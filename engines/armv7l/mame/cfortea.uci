@@ -1,0 +1,64 @@
+[01-60/5m]
+level = 1
+PicoTimeControl = 60 5 1
+
+[02-40/5m]
+level = 2
+PicoTimeControl = 40 5 1
+
+[03-60/30m]
+level = 3
+PicoTimeControl = 60 30 1
+
+[04-30/30m]
+level = 4
+PicoTimeControl = 30 30 1
+
+[05-30/60m]
+level = 5
+PicoTimeControl = 30 60 1
+
+[06-40/90m]
+level = 6
+PicoTimeControl = 40 90 1
+
+[07-40/2h]
+level = 7
+PicoTimeControl = 40 120 1
+
+[08-40/2.5h]
+level = 8
+PicoTimeControl = 40 150 1
+
+[09-60/3h]
+level = 9
+PicoTimeControl = 60 180 1
+
+;[10-40/10h]
+;level = 10
+;PicoTimeControl = 40 600 30
+
+[11-40/30m]
+level = 11
+PicoTimeControl = 40 30 1
+
+[12-40/1h]
+level = 12
+PicoTimeControl = 40 60 0 5
+
+[13-40/100m]
+level = 13
+PicoTimeControl = 40 100 1
+
+[14-45/150m]
+level = 14
+PicoTimeControl = 45 150 1
+
+;[15-40/12h]
+;level = 15
+;PicoTimeControl = 40 720 0 30
+
+[16-40/10m]
+level = 16
+PicoTimeControl = 40 10 1
+

@@ -1,0 +1,77 @@
+[Blitz 5m]
+level = 5 min/game
+style = offensive
+strength = moderate
+easy = off
+
+[Blitz 10m]
+level = 10 min/game
+style = offensive
+strength = moderate
+easy = off
+
+[Blitz 15m]
+level = 15 min/game
+style = offensive
+strength = moderate
+easy = off
+
+[Blitz 30m]
+level = 30 min/game
+style = offensive
+strength = moderate
+easy = off
+
+[Blitz 60m]
+level = 60 min/game
+style = offensive
+strength = moderate
+easy = off
+
+[Move 1s]
+level = 1 sec/move
+style = offensive
+strength = moderate
+easy = off
+
+[Move 5s]
+level = 5 sec/move
+style = offensive
+strength = moderate
+easy = off
+
+[Move 10s]
+level = 10 sec/move
+style = offensive
+strength = moderate
+easy = off
+
+[Move 30s]
+level = 30 sec/move
+style = offensive
+strength = moderate
+easy = off
+
+[Tourn.40m2h]
+level = 40/2:00 moves/hrs
+style = offensive
+strength = moderate
+easy = off
+
+[Easy 5g]
+level = 5 min/game
+style = offensive
+strength = novice
+easy = on
+
+[Easy 5m]
+level = 5 sec/move
+style = offensive
+strength = novice
+easy = on
+
+[Blitz5m-nov]
+level = 5 min/game
+style = offensive
+strength = novice
+easy = off

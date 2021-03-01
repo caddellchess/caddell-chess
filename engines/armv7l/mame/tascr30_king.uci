@@ -1,0 +1,55 @@
+[DEFAULT]
+; style = normal
+style = offensive
+; choices: defensive, solid, normal, active, offensive
+; strength = expert
+strength = moderate
+; choices: expert, strong, moderate, novice 
+
+[0-5m novice]
+strength = novice
+level = 5 min/game
+PicoTimeControl = 5 0
+
+[01-5m game]
+level = 5 min/game
+PicoTimeControl = 5 0
+
+[02-10m game]
+level = 10 min/game
+PicoTimeControl = 10 0
+
+[03-15m game]
+level = 15 min/game
+PicoTimeControl = 15 0
+
+[04-30m game]
+level = 30 min/game
+PicoTimeControl = 30 0
+
+[05-60m game]
+level = 60 min/game
+PicoTimeControl = 60 0
+
+[06-1s move]
+level = 1 sec/move
+PicoTimeControl = 1
+
+[07-5s move]
+level = 5 sec/move
+PicoTimeControl = 5
+
+[08-10s move]
+level = 10 sec/move
+PicoTimeControl = 10
+
+[09-30s move]
+level = 30 sec/move
+PicoTimeControl = 30
+
+[10-40/2h]
+level = 40/2:00 moves/hrs
+PicoTimeControl = 40 120 0
+
+
+

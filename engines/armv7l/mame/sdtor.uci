@@ -1,0 +1,37 @@
+[0-speed]
+speed = 0
+level = a5
+PicoTimeControl = 60
+
+[1-2s move]
+level = a1
+PicoTimeControl = 2
+
+[2-5s move]
+level = a2
+PicoTimeControl = 5
+
+[3-10s move]
+level = a3
+PicoTimeControl = 10
+
+[4-30s move]
+level = a4
+PicoTimeControl = 30
+
+[5-1m move]
+level = a5
+PicoTimeControl = 60
+
+[6-2m move]
+level = a6
+PicoTimeControl = 120
+
+[7-3m move]
+level = a7
+PicoTimeControl = 180
+
+[8-6m move]
+level = a8
+PicoTimeControl = 360
+

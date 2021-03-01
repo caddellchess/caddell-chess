@@ -1,0 +1,83 @@
+[DEFAULT] 
+Hash = 16 
+Threads = 1
+Use_Book_1 = true
+Book_File_1 = 
+Use_Book_2 = true
+Book_File_2 =
+Use_Book_3 = true 
+Book_File_3 = 
+Use_Book_4 = true
+Book_File_4 =
+#SyzygyPath = /opt/picochess/tablebases/syzygy 
+Slow Mover = 84
+Move Overhead = 500
+Ponder = false
+Debug Log File = WFnn.log
+UseNN = true
+EvalFile = /opt/picochess/engines/armv7l/NNUE/eval.bin
+
+[Level@00]
+Level = 0
+
+[Level@01]
+Level = 1
+
+[Level@02]
+Level = 2
+
+[Level@03]
+Level = 3
+
+[Level@04]
+Level = 4
+
+[Level@05]
+Level = 5
+
+[Level@06]
+Level = 6
+
+[Level@07]
+Level = 7
+
+[Level@08]
+Level = 8
+
+[Level@09]
+Level = 9
+
+[Level@10]
+Level = 10
+
+[Level@11]
+Level = 11
+
+[Level@12]
+Level = 12
+
+[Level@13]
+Level = 13
+
+[Level@14]
+Level = 14
+
+[Level@15]
+Level = 15
+
+[Level@16]
+Level = 16
+
+[Level@17]
+Level = 17
+
+[Level@18]
+Level = 18
+
+[Level@19]
+Level = 19
+
+[Level@20]
+Level = 20
+Threads = 2
+

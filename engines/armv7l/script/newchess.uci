@@ -1,0 +1,14 @@
+[1-easy]
+depth = 2
+qplies = 2
+pstab = 1
+
+[2-normal]
+depth = 3
+qplies = 4
+pstab = 1 
+
+[3-strong]
+depths = 4
+qplies = 46
+pstab = 2 

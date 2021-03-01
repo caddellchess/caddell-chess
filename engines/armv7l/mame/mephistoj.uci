@@ -1,0 +1,37 @@
+;[Level Speed]
+;speed = 0
+;level = a8
+;PicoTimeControl = ?
+
+[1-4s move]
+level = a1
+PicoTimeControl = 4
+
+[2-11s move]
+level = a2
+PicoTimeControl = 11
+
+[3-25s move]
+level = a3
+PicoTimeControl = 25
+
+[4-50s move]
+level = a4
+PicoTimeControl = 50
+
+[5-110s move]
+level = a5
+PicoTimeControl = 110
+
+[6-3m move]
+level = a6
+PicoTimeControl = 180
+
+[7-12m move]
+level = a7
+PicoTimeControl = 720
+
+;[8->8h move]
+;level = a8
+;PicoTimeControl = 02 999 02 999
+

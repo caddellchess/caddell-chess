@@ -1,0 +1,19 @@
+[DEFAULT]
+Hash = 192
+UCI_Chess960 = False
+Ponder = False
+SyzygyPath = /opt/picochess/tablebases/syzygy
+NNUENetpath = nn-803c91ad5c-20201107.nnue
+Use NNUE = True
+
+[1 Core]
+Threads = 1
+
+[2 Cores]
+Threads = 2
+
+[3 Cores]
+Threads = 3
+
+[4 Cores]
+Threads = 4

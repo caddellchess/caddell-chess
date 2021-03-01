@@ -1,0 +1,25 @@
+[0-speed]
+speed = 0
+level = 3
+PicoTimeControl = 540
+
+[1-1s move]
+level = 1
+PicoTimeControl = 1
+
+[2-2s move]
+level = 2
+PicoTimeControl = 2
+
+[3-5s to 9m]
+level = 3
+PicoTimeControl = 540
+
+[4-10s to 9m]
+level = 4
+PicoTimeControl = 540
+
+[5-2m to 9m]
+level = 5
+PicoTimeControl = 540
+

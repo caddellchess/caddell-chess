@@ -1,0 +1,24 @@
+[TuroChamp]
+maxplies = 2
+qplies = 7
+pstab = 0
+
+[1-easy]
+maxplies = 1
+qplies = 3
+pstab = 2
+
+[2-normal]
+maxplies = 3
+qplies = 5
+pstab = 2
+
+[3-strong]
+maxplies = 5
+qplies = 7
+pstab = 2
+
+[4-stronger]
+maxplies = 7
+qplies = 7
+pstab = 2

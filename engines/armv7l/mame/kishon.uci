@@ -1,0 +1,33 @@
+[0-speed]
+speed = 0
+level = a5
+PicoTimeControl = 60
+
+[1 - 5 min]
+level = a1
+PicoTimeControl = 5 0
+
+[2 - 10 min]
+level = a2
+PicoTimeControl = 10 0
+
+[3-  15 min]
+level = a3
+PicoTimeControl = 15 0
+
+[4 - 30 min]
+level = a4
+PicoTimeControl = 30 0
+
+[5 - 60 min]
+level = a5
+PicoTimeControl = 60 0
+
+[6 - 40/2h]
+level = a7
+PicoTimeControl = 40 120 0
+
+[7 - 40/2.5h]
+level = a8
+PicoTimeControl = 40 150 0
+

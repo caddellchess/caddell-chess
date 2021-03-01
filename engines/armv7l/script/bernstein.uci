@@ -1,0 +1,17 @@
+[1-IBM704]
+maxplies = 3
+pmtlen   = 7
+pmtstart = 0
+matetest = FALSE
+
+[2-normal]
+maxplies = 3
+pmtlen   = 7
+pmstart  = 2
+matetest = FALSE
+
+[3-strong]
+maxplies = 4
+pmtlen   = 10
+pmtstart = 2
+matetest = FALSE

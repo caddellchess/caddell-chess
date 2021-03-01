@@ -1,0 +1,92 @@
+[DEFAULT]
+Hash = 16
+Threads = 1
+BestBookMove = false
+Use_Book_1 = true
+Book_File_1 = 
+Use_Book_2 = true
+Book_File_2 =
+Use_Book_3 = true 
+Book_File_3 = 
+Use_Book_4 = true
+Book_File_4 = 
+SyzygyPath = /opt/picochess/tablebases/syzygy
+UCI_LimitStrength = true
+FIDE_Ratings = true
+Ponder = false
+Adaptive_Play = false
+Slow Play = true
+Debug Log File = BDnn.log
+UseNN = true
+EvalFile = /opt/picochess/engines/armv7l/NNUE/eval.bin
+
+[Elo 1000]
+UCI_Elo = 1000
+
+[Elo 1200] 
+UCI_Elo = 1200
+
+[Elo 1350]
+UCI_Elo = 1350
+
+[Elo 1500]
+UCI_Elo = 1500
+
+[Elo 1650]
+UCI_Elo = 1650
+
+[Elo 1800]
+UCI_Elo = 1800
+
+[Elo 1950]
+UCI_Elo = 1950
+Hash = 32
+
+[Elo 2100]
+UCI_Elo = 2100
+Hash = 32
+
+[Elo 2200]
+UCI_Elo = 2200
+Hash = 32
+
+[Elo 2300]
+UCI_Elo = 2300
+Hash = 32
+
+[Elo 2400]
+UCI_Elo = 2400
+Hash = 32
+
+[Elo 2500]
+UCI_Elo = 2500
+Hash = 32
+
+[Elo 2650]
+UCI_Elo = 2650
+Hash = 48
+
+[Elo 2800]
+UCI_Elo = 2800
+Hash = 96
+BestBookMove = true
+Slow Play = false
+Threads = 2
+
+[Elo 2900]
+UCI_Elo = 2900
+Slow Mover = 84
+Move Overhead = 500
+Hash = 192
+Ponder = true
+BestBookMove = true
+UCI_LimitStrength = false
+Slow Play = false
+Threads = 3
+
+[Adaptive]
+Slow Mover = 84
+Move Overhead = 500
+Adaptive_Play = true
+Hash = 32
+

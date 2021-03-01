@@ -1,0 +1,45 @@
+[0-speed]
+speed = 0
+level = 4
+PicoTimeControl = 60
+
+[0-3s move]
+level = 0
+PicoTimeControl = 3
+
+[1-5s move]
+level = 1
+PicoTimeControl = 5
+
+[2-10s move]
+level = 2
+PicoTimeControl = 10
+
+[3-30s move]
+level = 3
+PicoTimeControl = 30
+
+[4-1m move]
+level = 4
+PicoTimeControl = 60
+
+[5-2m move]
+level = 5
+PicoTimeControl = 120
+
+[6-40/2hrs]
+level = 6
+PicoTimeControl = 40 120 0
+
+[7-5m game]
+level = 7 00:05:00
+PicoTimeControl = 5 1
+
+[8-1s move]
+level = 8 00:00:01
+PicoTimeControl = 1
+
+;[9-Analysis]
+;level = 9
+;PicoTimeControl = ?
+

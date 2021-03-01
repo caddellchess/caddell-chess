@@ -1,0 +1,36 @@
+[1-5s move]
+level = NORML 01
+PicoTimeControl = 5
+
+[2-15s move]
+level = NORML 03
+PicoTimeControl = 15
+
+[3-30s move]
+level = NORML 04
+PicoTimeControl = 30
+
+[4-5m game]
+level = BLITZ 02
+PicoTimeControl = 5 1
+
+[5-15m game]
+level = BLITZ 05
+PicoTimeControl = 15 1
+
+[6-30m game]
+level = BLITZ 07
+PicoTimeControl = 30 1
+
+[7-60m game]
+level = BLITZ 09
+PicoTimeControl = 60 1
+
+[8-HC 50%]
+level = HANDC 04
+PicoTimeControl = 30
+
+[9-EASY3]
+level = EASY 03
+PicoTimeControl = 15
+

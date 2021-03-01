@@ -1,0 +1,45 @@
+;[Level Speed]
+;speed = 0
+;level = P4
+;PicoTimeControl = ?
+
+[01-1s move]
+level = P1
+PicoTimeControl = 1
+
+[02-60/5m]
+level = P2
+PicoTimeControl = 60 5 1
+
+[03-60/10m]
+level = P3
+PicoTimeControl = 60 10 1
+
+[04-60/20m]
+level = P4
+PicoTimeControl = 60 20 1
+
+[05-60/30m]
+level = P5
+PicoTimeControl = 60 30 1
+
+[06-30/30m]
+level = T1
+PicoTimeControl = 30 30 1
+
+[07-30/60m]
+level = T2
+PicoTimeControl = 30 60 1
+
+[08-40/2h]
+level = T3
+PicoTimeControl = 40 120 1
+
+[09-40/2.5h]
+level = T4
+PicoTimeControl = 40 150 1
+
+[10-24/4h]
+level = T5
+PicoTimeControl = 24 480 1
+

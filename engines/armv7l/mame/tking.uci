@@ -1,0 +1,37 @@
+;[Level,Speed]
+;speed = 0
+;level = a8
+;PicoTimeControl = ?
+
+[1-1s move]
+level = a1
+PicoTimeControl = 1
+
+[2-2s move]
+level = a2
+PicoTimeControl = 2
+
+[3-5s move]
+level = a3
+PicoTimeControl = 5
+
+[4-15s move]
+level = a4
+PicoTimeControl = 15
+
+[5-30s move]
+level = a5
+PicoTimeControl = 30
+
+[6-60s move]
+level = a6
+PicoTimeControl = 60
+
+[7-2m move]
+level = a7
+PicoTimeControl = 120
+
+[8-3m move]
+level = a8
+PicoTimeControl = 180
+

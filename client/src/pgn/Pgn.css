@@ -1,0 +1,40 @@
+.pgn {
+  font-family: 'Lato', sans-serif;
+  flex: 1;
+  /*background-color: #607592;*/
+  background-color: #607592;
+  color: #bec7d4;
+  padding: 35px 35px 35px 20px;
+  /*height: 372px;*/
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+ol {
+  font-family: 'Overpass Mono', monospace;
+  text-align: left;
+}
+
+ol > li > .shade {
+  color: #4f5358;
+}
+
+.algebraic, .descriptive {
+  overflow-y: auto;
+  height: 264px;
+}
+
+.pgn-tabs {
+  text-align: left;
+}
+
+.pgn-tabs ul {
+  padding: 0 0 0 10px;
+}
+
+.pgn-selected-tab {
+  background-color: #607592;
+  border-color: #bec7d4;
+  color: #bec7d4;
+  border-radius: 5px 5px 0 0;
+}

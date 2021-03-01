@@ -1,0 +1,17 @@
+.header {
+  font-family: 'Mallanna', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #637291;
+  text-align: left;
+  color: #3d2732c4;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.header .opening-book {
+  margin-bottom: 10px;
+}

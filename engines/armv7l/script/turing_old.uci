@@ -1,0 +1,28 @@
+[TuroChamp]
+maxplies = 1
+qplies = 3
+pstab = 0
+pdead = 1
+matetest = false
+
+[1-easy]
+maxplies = 1
+qplies = 3
+pstab = 2
+pdead = 1
+matetest = false
+
+[2-normal]
+maxplies = 3
+qplies = 5
+pstab = 2
+pdead = 1
+matetest = false 
+
+[3-strong]
+maxplies = 4
+qplies = 5
+pstab = 2
+pdead = 1
+matetest = false
+ 

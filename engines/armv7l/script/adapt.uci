@@ -1,0 +1,43 @@
+[Advant 1]
+nummov = 15
+mtime = 3 
+ev = 100
+alim = 200
+lambda = 10
+trueval = true
+usebook = true
+bookpath = /opt/picochess/engines/script_engines/PyTuroChamp/Elo2400.bin
+enginepath = /opt/picochess/engines/armv7l/a-stockf
+
+[Advant 3]
+nummov = 15
+mtime = 5 
+ev = 300
+alim = 200
+lambda = 10
+trueval = true
+usebook = true
+bookpath = /opt/picochess/engines/script_engines/PyTuroChamp/Elo2400.bin 
+enginepath = /opt/picochess/engines/armv7l/a-stockf
+
+[Advant-1]
+nummov = 15
+mtime = 5 
+ev = -100
+alim = 200
+lambda = 10
+trueval = true
+usebook = true
+bookpath = /opt/picochess/engines/script_engines/PyTuroChamp/Elo2400.bin 
+enginepath = /opt/picochess/engines/armv7l/a-stockf
+
+[Advant-3]
+nummov = 15
+mtime = 5 
+ev = -300
+alim = 200
+lambda = 10
+trueval = true
+usebook = true
+bookpath = /opt/picochess/engines/script_engines/PyTuroChamp/Elo2400.bin
+enginepath = /opt/picochess/engines/armv7l/a-stockf

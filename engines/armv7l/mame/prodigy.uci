@@ -1,0 +1,37 @@
+;[Level Speed]
+;speed = 0
+;level = 8
+;PicoTimeControl = ?
+
+[1-3s move]
+level = 1
+PicoTimeControl = 3
+
+[2-20s move]
+level = 2
+PicoTimeControl = 20
+
+[3-45s move]
+level = 3
+PicoTimeControl = 45
+
+[4-40/90m]
+level = 4
+PicoTimeControl = 40 90 1
+
+[5-15m move]
+level = 5
+PicoTimeControl = 15
+
+;[6-Analysis]
+;level = 6
+;PicoTimeControl = ?
+
+[7-30/60m]
+level = 7
+PicoTimeControl = 30 60 1
+
+[8-40/2h]
+level = 8
+PicoTimeControl = 40 120 1
+
