@@ -1,5 +1,5 @@
 import createReducer from './create-reducer';
-import actions from '../actions/actions';
+import actions from  '../actions/actions';
 
 //const actions = {
 //  APPEND_MOVE: 'APPEND_MOVE',

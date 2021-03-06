@@ -1,6 +1,6 @@
-export const actions = {
+export default {
   APPEND_MOVE: 'APPEND_MOVE',
-  ECHO_ACTION: 'ECHO_ACTION'
+  ECHO_ACTION: 'ECHO_ACTION',
   ENGINE_MOVE: 'ENGINE_MOVE',
   NEW_OPENING: 'NEW_OPENING',
   PRIME_GUI: 'PRIME_GUI',
