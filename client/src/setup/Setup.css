@@ -1,0 +1,151 @@
+.setup {
+  font-family: 'Lato', sans-serif;
+  flex: 1;
+  background-color: #607592;
+  color: #bec7d4;
+  padding: 35px 35px 35px 20px;
+  margin: 35px;
+  border: 1px solid;
+  border-radius: 5px;
+  height: 100%;
+  width: calc(100vw - 125px);
+  overflow-y: auto;
+}
+
+.color, .engine-choice, .setup .opening-book {
+  display: flex;
+  flex-direction: row;
+  margin: auto 20px;
+}
+
+.color p {
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 45px;
+}
+
+.engine, .level, .personality, .book {
+  width: 30vw;
+  margin-right: 10px;
+}
+
+.opening-book {
+  width: 30vw;
+}
+
+.color-label {
+  margin-top: 15px !important;
+  color: #bec7d4 !important;
+  width: 50px;
+}
+
+.setup label, .input-field p {
+  display: block;
+}
+.input-field {
+  margin-top: 12px;
+}
+
+.setup h3 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.setup h3:not(:first-of-type) {
+    margin-top: 50px;
+}
+
+.setup h3:after {
+  content: ' Choice';
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  margin-top: 40px;
+}
+/*.setup button {
+  margin: 30px;
+  font-size: 18px;
+  height: 65px;
+  width: 350px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+  color: #464E58;
+  background: #bec7d4;
+  cursor: pointer;
+}*/
+
+
+/*.myButton {
+  box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color:#768d87;
+  border-radius:5px;
+  border:1px solid #566963;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:11px 23px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #2b665e;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color:#6c7c7c;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}*/
+hr {
+  margin-top: 40px;
+}
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: #bec7d4;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #bec7d4;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.myButton {
+  box-shadow:inset 0px 0px 14px -3px #f2fadc;
+  background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+  background-color:#dbe6c4;
+  border-radius:6px;
+  border:1px solid #b2b8ad;
+  display:inline-block;
+  cursor:pointer;
+  color:#757d6f;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:12px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ced9bf;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+  background-color:#9ba892;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}

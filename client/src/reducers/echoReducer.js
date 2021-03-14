@@ -1,7 +1,5 @@
 import createReducer from './create-reducer';
-const actions = {
-  ECHO_ACTION: 'ECHO_ACTION'
-};
+import actions from  '../actions/actions';
 
 const getInitialState = () => ({
   empty: null

@@ -12,6 +12,7 @@ const settings = require('./middleware/settings');
 const settingsPageTwo = require('./middleware/settings-page-two');
 const getAllBooks = require('../helpers/get-books');
 const { getAllEngines } = require('../helpers/get-engines');
+const clientRequests = require('./middleware/client-requests');
 const actions = require('../actions/actions');
 
 const chess = new Chess();
@@ -36,7 +37,11 @@ function middleware({ getState, dispatch }) {
     }
 
     if (action.type == actions.NEW_GAME) {
-      await engine.quit();
+      try {
+        await engine.quit();
+      } catch (err) {
+        console.log('quitting engine =>', err);
+      }
       await nextion.setPage('1');
     }
 
@@ -63,6 +68,7 @@ function middleware({ getState, dispatch }) {
     await otherScreens(dispatch, getState, engine, chess, nextion)(action);
     await settings(dispatch, getState, engine, chess, nextion)(action);
     await settingsPageTwo(dispatch, getState, engine, chess, nextion)(action);
+    await clientRequests(dispatch, getState, engine, chess, nextion)(action);
 
     const returnValue = next(action)
     return returnValue

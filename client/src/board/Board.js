@@ -18,7 +18,7 @@ import bK from "../img/bk.png";
 
 export default class Pgn extends React.Component {
   render() {
-    const { fen } = this.props;
+    const { fen, isPlayerWhite = true } = this.props;
 
     const darkSquareStyle = {
       background: `linear-gradient(160deg, rgba(108,101,111,1) 0%, rgba(108,101,111,1) 67%, rgba(127,119,131,1) 100%),url(${noise})`
@@ -48,6 +48,7 @@ export default class Pgn extends React.Component {
           draggable={false}
           lightSquareStyle={lightSquareStyle}
           darkSquareStyle={darkSquareStyle}
+          orientation={isPlayerWhite ? 'white' : 'black'}
           pieces={{
             bK: pieceDef(bK, 'black king'),
             bQ: pieceDef(bQ, 'black queen'),

@@ -8,10 +8,11 @@ export default class Info extends React.Component {
   }
 
   render() {
+    const { info } = this.props;
     return (
       <div className='info-wrapper'>
         <div className='info'>
-          {this.props.info.map((row, index) => (
+          {info && info.map((row, index) => (
             <p
               key={index}
               ref={(ref) => this.infoLine = ref}
