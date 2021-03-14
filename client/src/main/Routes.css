@@ -1,0 +1,23 @@
+.routes {
+  flex: 0 1 auto;
+  width: 40%;
+  align-self: center;
+}
+.routes ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  margin: 0 35px 0;
+}
+.routes li {
+  margin-left: 25px;
+}
+.routes li a {
+  color: #ACB8A4;
+  text-decoration: none;
+  font-size: 18px;
+}
+.routes .selected {
+  font-weight: bold;
+  font-size: 20px;
+}

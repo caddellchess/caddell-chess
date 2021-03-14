@@ -27,6 +27,8 @@ function App(props) {
       <Main
         gamePlay={{...props.client.gamePlay}}
         currentGame={{...props.client.currentGame}}
+        system={{...props.client.system}}
+        loading={props.client.loading}
       />
     </div>
   );

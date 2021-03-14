@@ -7,6 +7,7 @@ const actions = require('./actions/actions');
 
 async function run(getStore) {
   const app = express();
+  app.use(express.json());
 
   app.get('/actions', async function(req, res) {
     res.set({
@@ -30,6 +31,17 @@ async function run(getStore) {
     const serverStore = getStore();
     const state = serverStore.getState();
     serverStore.dispatch({ type: actions.PRIME_GUI, payload: state });
+    res.send('ok');
+  });
+
+  app.post('/dispatch', async function(req, res) {
+    const serverStore = getStore();
+    const { type, payload = null } = req.body;
+    const action = { type: type };
+    if (payload) {
+      action.payload = payload;
+    }
+    serverStore.dispatch(action);
     res.send('ok');
   });
 

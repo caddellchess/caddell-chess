@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import _ from 'lodash';
 import Chess from 'chess.js';
+import Routes from './Routes';
 import Board from '../board/Board';
 import Pgn from '../pgn/Pgn';
 import Info from '../info/Info';
+import Setup from '../setup/Setup';
+import Loading from '../loading/Loading';
 import './Main.css';
 
 const chess = new Chess();
@@ -15,7 +24,8 @@ export default class Main extends React.Component {
       fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
       pgn: '',
       gameMoves: [],
-      undoMoves: []
+      undoMoves: [],
+      loading: true
     };
   }
 
@@ -24,7 +34,7 @@ export default class Main extends React.Component {
       chess.reset();
       nextProps.gamePlay.gameMoves.forEach(move => chess.move(move, { sloppy: true }));
       const fen = chess.fen();
-      const pgn = chess.pgn().split(' ').filter((move, index) => index%3 != 0);
+      const pgn = chess.pgn().split(' ').filter((move, index) => index%3 !== 0);
       return {
         fen: fen,
         pgn: pgn,
@@ -73,44 +83,111 @@ export default class Main extends React.Component {
     return chess.pgn();
   }
 
+  renderMain() {
+    const { fen, pgn, gameMoves } = this.state;
+    const { isPlayerWhite } = this.props.currentGame;
+    const { info = [] } = this.props.gamePlay;
+
+    return (
+      <Switch>
+        <Route path='/setup'>
+          <div className='wrapper-setup'>
+            <div className='setup-pane'>
+              <Setup />
+            </div>
+          </div>
+        </Route>
+
+        <Route path='/'>
+          <div className='wrapper'>
+            <div className='board-pane'>
+              <Board
+                fen={fen}
+                isPlayerWhite={isPlayerWhite}
+              />
+            </div>
+            <div className='pgn-pane'>
+              <Pgn
+                gameMoves={gameMoves}
+                pgn={pgn}
+                pgnForDownload={this.pgnForDownload.bind(this)}
+                evaluation={this.props.gamePlay.evaluation}
+                currentGame={this.props.currentGame}
+                moveBack={this.moveBack.bind(this)}
+                moveForward={this.moveForward.bind(this)}
+                moveReset={this.moveReset.bind(this)}
+                movesRemoved={this.state.undoMoves.length}
+              />
+            </div>
+          </div>
+          <Info info={info} />
+        </Route>
+      </Switch>
+    );
+  }
+
   render() {
-    const fen = this.state.fen;
-    const pgn = this.state.pgn;
-    const gameMoves = this.state.gameMoves;
-    //const { info = [] } = this.props.gamePlay;
-    let info = [];
-    if (this.props.gamePlay.hasOwnProperty('info')) {
-      info = this.props.gamePlay.info;
+    if (!this.props.loading && this.state.loading) {
+      setTimeout(() => this.setState({ loading: false }), 1500);
     }
 
     return (
       <div className='container'>
-        <header className="caddell-header">
-          <div className="brand">Caddell Chess Computer</div>
-          <nav className="nav"></nav>
-        </header>
-        <div className='wrapper'>
-          <div className='board-pane'>
-            <Board
-              fen={fen}
-            />
-          </div>
-          <div className='pgn-pane'>
-            <Pgn
-              gameMoves={gameMoves}
-              pgn={pgn}
-              pgnForDownload={this.pgnForDownload.bind(this)}
-              evaluation={this.props.gamePlay.evaluation}
-              currentGame={this.props.currentGame}
-              moveBack={this.moveBack.bind(this)}
-              moveForward={this.moveForward.bind(this)}
-              moveReset={this.moveReset.bind(this)}
-              movesRemoved={this.state.undoMoves.length}
-            />
-          </div>
-        </div>
-        <Info info={info} />
+        <Router>
+          <header className="caddell-header">
+            <div className="brand">Caddell Chess Computer</div>
+            {this.state.loading ? null : <Routes /> }
+          </header>
+          {this.state.loading ? <Loading /> : this.renderMain() }
+        </Router>
       </div>
     );
   }
 }
+
+Main.propTypes = {
+  gamePlay: PropTypes.shape({
+    gameMoves: PropTypes.array,
+    bestmove: PropTypes.string,
+    evaluation: PropTypes.number,
+    hintMove: PropTypes.string,
+    gauge: PropTypes.number,
+    blunder: PropTypes.shape({
+      text: PropTypes.string,
+      grade: PropTypes.string
+    }),
+    board: PropTypes.shape({
+      board: PropTypes.array,
+      whiteTaken: PropTypes.array,
+      blackTaken: PropTypes.array
+    })
+  }),
+  currentGame: PropTypes.shape({
+    isPlayerWhite: PropTypes.bool,
+    randomMove: PropTypes.number,
+    useBook: PropTypes.bool,
+    isBookMove: PropTypes.bool,
+    opening: PropTypes.string,
+    gameOverReason: PropTypes.string,
+    openingBook: PropTypes.shape({
+      name: PropTypes.string,
+      filename: PropTypes.string
+    }),
+    engine: PropTypes.shape({
+      hmi: PropTypes.string,
+      filename: PropTypes.string,
+      level: PropTypes.shape({
+        hmi: PropTypes.string,
+        mri: PropTypes.array
+      })
+    }),
+    engineDefaults: PropTypes.array,
+    engineHasPersonalities: PropTypes.bool,
+    pesonality: PropTypes.object
+  }),
+  system: PropTypes.shape({
+    booksArray: PropTypes.array,
+    engineArray:  PropTypes.array
+  }),
+  loading: PropTypes.bool
+};

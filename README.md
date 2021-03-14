@@ -184,12 +184,13 @@ you to view the history
 - view the move history in either long algebraic or descriptive notation
 - ability to see the engine's _info_ responses
 - ability to download the PGN of the game
+- choose engine, level, personality (if applicable), and color
 
 <img src="screenshots/browser-component.jpg" alt="browser component">
 
 Partial Future Browser Features Planned
 
-- set parameters (color, engine, level, etc) of a game and start it
+- set more engine parameters than just level and personality
 - read info about engines, pesonalities, and books
 - set more options for the engine than are exposed on the stand alone device
 
