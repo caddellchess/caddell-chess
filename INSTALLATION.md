@@ -48,7 +48,7 @@ SSH into your RPi using `pi` as the username and `raspberry` as the password.
 * `mkdir projects && cd $_`
 * `git clone https://github.com/caddellchess/caddell-chess.git`
 
-for now Caddell has a limitation that it must reside in `/home/pi/projects/caddell-chess` on the RPi
+for now Caddell has a limitation that it must reside in `/home/pi/caddell-chess` on the RPi
 
 ##### Install all the nodejs dependencies
 * `cd caddell-chess`

@@ -28,6 +28,9 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
 
     // set level
     const level = state.currentGame.engine.level;
+    if (!level.hasOwnProperty('mri')) {
+      level.mri = [];
+    }
     for (const mri of level.mri) {
       await engine.setoption(mri.key, mri.value);
     }
@@ -63,8 +66,10 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
     if (engineHasPersonalities) {
       const personality = state.currentGame.engine.personality.name;
       engineText = `"${engineId.name} - ${engineLevel} - ${personality}"`;
+    } else if (engineLevel && engineLevel != 'undefined') {
+      engineText =`"${engineId.name} - ${engineLevel}"`;
     } else {
-      engineText =`"${engineId.name} - ${engineLevel}"`
+      engineText = `"${engineId.name}"`;
     }
     await nextion.setValue('page1.t1.txt', engineText);
   }

@@ -11,7 +11,7 @@ A little advanced technical knowledge is assumed for these steps.
 
 **It is assumed that the stand alone chess computer is running at this point.**
 
-SSH to the Raspberry Pi, and navigate to the `caddell/client` directory.
+SSH to the Raspberry Pi, and navigate to the `caddell-chess/client` directory.
 
 Enter the `npm install` command to install all necessary dependencies.
 Enter `npm run build` command to "compile" and package the "front end" code.
