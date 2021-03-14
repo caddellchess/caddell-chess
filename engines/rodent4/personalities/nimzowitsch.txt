@@ -62,6 +62,6 @@ setoption name Selectivity value 175
 setoption name SearchSkill value 10
 setoption name RiskyDepth value 0
 setoption name BookFilter value 20
-setoption name GuideBookFile value /home/pi/caddell/engines/rodent4/books/guide/nimzowitsch.bin
-setoption name MainBookFile value /home/pi/caddell/engines/rodent4/books/guide/nimzowitsch.bin
+setoption name GuideBookFile value /home/pi/caddell-chess/engines/rodent4/books/guide/nimzowitsch.bin
+setoption name MainBookFile value /home/pi/caddell-chess/engines/rodent4/books/guide/nimzowitsch.bin
 

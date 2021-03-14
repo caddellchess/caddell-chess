@@ -2,10 +2,24 @@ const fs = require('fs');
 const ini = require('js-ini');
 
 const getEngineLevels = async (settingsEngine) => {
-  const rawEngine = await ini.parse(fs.readFileSync('./engines/armv7l/' + settingsEngine + '.uci', 'utf-8'));
   let levelArray = [];
   let engineDefaults = [];
   let engineHasPersonalities = false;
+  const engineUciFilePath = './engines/armv7l/' + settingsEngine + '.uci';
+
+  try {
+    if (!fs.existsSync(engineUciFilePath)) {
+      return ({
+        levelArray: levelArray,
+        engineDefaults: engineDefaults,
+        engineHasPersonalities: engineHasPersonalities
+      })
+    }
+  } catch(err) {
+    console.info(err)
+  }
+
+  const rawEngine = await ini.parse(fs.readFileSync('./engines/armv7l/' + settingsEngine + '.uci', 'utf-8'));
   for (const property in rawEngine) {
     if (property.toUpperCase() == 'DEFAULT') {
       for (const defaults in rawEngine[property]) {
@@ -45,7 +59,7 @@ const getEngineLevels = async (settingsEngine) => {
     levelArray: levelArray,
     engineDefaults: engineDefaults,
     engineHasPersonalities: engineHasPersonalities
-  })
+  });
 }
 
 module.exports = getEngineLevels;

@@ -97,7 +97,10 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
       await engine.position('startpos', state.gamePlay.gameMoves);
       // TODO REMOVE THE FOLLOWING: For testing promotions only
       //await engine.position('8/P4r2/4k3/8/8/4K3/5B2/8 w - - 0 1', state.gamePlay.gameMoves);
-      resultedMove = await engine.go({ movetime: 5000 });
+      //resultedMove = await engine.go({ movetime: 5000 });
+
+      // BUGFIX: this was changed to depth because Saruman ran infinite with "movetime: 5000"
+      resultedMove = await engine.go({ depth: 5 }); //TODO make this awesome
     }
     chess.move(resultedMove.bestmove, { sloppy: true });
     await dispatch({ type: actions.ENGINE_MOVE, payload: { move: resultedMove }});

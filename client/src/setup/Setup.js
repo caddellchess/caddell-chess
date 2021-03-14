@@ -115,13 +115,14 @@ class Setup extends React.Component {
       } :
       {};
 
+    const level = levelSelected ?
+      { hmi: levelSelected.label, mri: levelSelected.value } :
+      {};
+
     const engine = {
       hmi: engineSelected.label,
       filename: engineSelected.value,
-      level: {
-        hmi: levelSelected.label,
-        mri: levelSelected.value
-      },
+      level,
       engineDefaults,
       engineHasPersonalities,
       personality // {name: 'Cloe', mri: 'cloe.txt'}
