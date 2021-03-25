@@ -197,8 +197,8 @@ are staggering... a unique game experience is all but guaranteed.
 
 <img src="screenshots/browser-setup-relay.jpg" alt="browser relay setup">
 
-This feature, inspired by a message[^2] on the Computer Chess Club forum, called "Relay Chess" after races in sports
-where members of a team take turns completing parts of a race course or performing certain actions[^1], is only
+This feature, inspired by a message<sup>[1](#ovyron)</sup> on the Computer Chess Club forum, called "Relay Chess" after races in sports
+where members of a team take turns completing parts of a race course or performing certain actions<sup>[2](#wikipedia)</sup>, is only
 available via the browser component. Once again, this is still a very experimental feature and it would not be
 unreasonable to expect bugs, however as long as you keep to the "happy path" you should avoid any problems. If you are
 the adventurous type and push its limits, it would help considerably if you would please report any bugs you encounter
@@ -258,6 +258,6 @@ be found in this project's package.json file.
 And last but far from least, a huge debt of gratitude is due to the chess engines that are readily available. Caddell
 would be at best a proof-of-concept project only without a chess engine to actually play a game against.
 
-[^1]: [https://en.wikipedia.org/wiki/Relay_race](https://en.wikipedia.org/wiki/Relay_race)
+<a name="ovyron">1</a>: [Ovyron's inspirational reply on the Computer Chess Club forum](http://www.talkchess.com/forum3/viewtopic.php?f=2&t=65485&sid=c8d8aa3e084d8dec1510c7c578eab9b4&start=70#p736434)
 
-[^2]: [Ovyron's inspirational reply on the Computer Chess Club forum](http://www.talkchess.com/forum3/viewtopic.php?f=2&t=65485&sid=c8d8aa3e084d8dec1510c7c578eab9b4&start=70#p736434)
+<a name="wikipedia">2</a>: [https://en.wikipedia.org/wiki/Relay_race](https://en.wikipedia.org/wiki/Relay_race)
