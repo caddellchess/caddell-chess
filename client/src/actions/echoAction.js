@@ -7,6 +7,7 @@ export const echoAction = (actionFromServer) => dispatch => {
     case actions.LOAD_LEVELS:
     case actions.NEW_OPENING:
     case actions.SAVE_EVAL:
+    case actions.UPDATE_CLIENT_ENGINE:
     case actions.PRIME_GUI:
       dispatch({...actionFromServer});
       break;

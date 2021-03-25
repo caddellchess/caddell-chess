@@ -37,7 +37,7 @@ KnightMobilityWt = 8
 BishopMobilityWt = 5
 RookMobilityWt = 5
 QueenMobilityWt = 4
-Personalities = true
+Personalities = false
 
 [Drunken]
 RookOn7thMg = 60

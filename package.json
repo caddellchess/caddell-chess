@@ -1,6 +1,6 @@
 {
   "name": "caddell-chess",
-  "version": "0.9.0",
+  "version": "0.10.0-0",
   "description": "A front end to chess engines that support the UCI protocol, written in Javascript",
   "main": "index.js",
   "directories": {

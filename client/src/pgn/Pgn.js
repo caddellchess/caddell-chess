@@ -39,8 +39,8 @@ export default class Pgn extends React.Component {
     return (
       <>
         <Header
-          engine={this.props.currentGame.engine.hmi}
-          level={this.props.currentGame.engine.level.hmi}
+          engine={this.props.currentGame.currentEngine}
+          level={this.props.currentGame.currentLevel}
           openingBook={this.props.currentGame.openingBook.name}
           opening={this.props.currentGame.opening}
           evaluation={this.props.evaluation}

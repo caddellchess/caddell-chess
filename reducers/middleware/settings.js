@@ -78,7 +78,9 @@ const settings = (dispatch, getState, engine, chess, nextion) => async action =>
         engine: engine,
         openingBook: openingBook,
         personality: personality,
-        useBook: useBook
+        useBook: useBook,
+        relayChess: false,
+        relayEngine: {}
       }
     });
     await dispatch({

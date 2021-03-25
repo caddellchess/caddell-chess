@@ -136,9 +136,9 @@ export default class Main extends React.Component {
         <Router>
           <header className="caddell-header">
             <div className="brand">Caddell Chess Computer</div>
-            {this.state.loading ? null : <Routes /> }
+            {this.props.loading ? null : <Routes /> }
           </header>
-          {this.state.loading ? <Loading /> : this.renderMain() }
+          {this.props.loading ? <Loading /> : this.renderMain() }
         </Router>
       </div>
     );

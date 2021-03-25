@@ -1,0 +1,16 @@
+.engine-select {
+  display: inline-flex;
+  flex-direction: row;
+  max-width: 90vw;
+}
+
+.game-phase {
+  margin-right: 20px;
+  width: 100px;
+  font-size: 18px;
+}
+
+.game-phase p {
+  margin: 18px 0px 0px 0px;
+  text-align: right;
+}

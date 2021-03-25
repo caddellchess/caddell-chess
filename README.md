@@ -70,6 +70,7 @@ ported to the Raspberry Pi platform. To date [Stockfish 12](https://stockfishche
 * [Redux](https://redux.js.org/)
 * [Nextion displays](https://nextion.tech/)
 * A handful of npm packages (listed in [package.json](http://github.com/caddellchess/blob/main/caddell-chess/package.json))
+* [React](https://reactjs.org/) for the optional browser component
 
 Caddell isn't meant to be a copy or a rewrite of any of the fantastic projects that already exist. I hope
 it fills a hole (no matter how small) and can stand on its own merits. Choosing Javascript as the
@@ -175,7 +176,7 @@ Only a limited functionality beta feature for now, Caddell also has a browser co
 to compliment the stand alone chess computer and not to replace any of its features or functionality. An enjoyable game
 will always be able to be played without using a browser at all.
 
-Some of what the browser component offers includes:
+**Some of what the browser component offers includes:**
 
 - seeing a large view of the board position (larger than on the 3.5" screen), for replacing pieces when a cat knocks
 your board over or a dog's tail swipes the pieces away
@@ -188,9 +189,23 @@ you to view the history
 
 <img src="screenshots/browser-component.jpg" alt="browser component">
 
-Partial Future Browser Features Planned
+A very experimental feature of the browser component is the new ability to select individual engines, levels, and/or
+personalities for the computer to play during the different game phases. You might want, for example, to have the
+computer play using Stockfish 13 at level 17 during the opening, then switch to Maia Elo 1300 for the middle game, and
+finally finish out with Rodent IV Elo 800 using personality Cloe for the endgame. The number of combinations available
+are staggering... a unique game experience is all but guaranteed.
 
-- set more engine parameters than just level and personality
+<img src="screenshots/browser-setup-relay.jpg" alt="browser relay setup">
+
+This feature, inspired by a message[^2] on the Computer Chess Club forum, called "Relay Chess" after races in sports
+where members of a team take turns completing parts of a race course or performing certain actions[^1], is only
+available via the browser component. Once again, this is still a very experimental feature and it would not be
+unreasonable to expect bugs, however as long as you keep to the "happy path" you should avoid any problems. If you are
+the adventurous type and push its limits, it would help considerably if you would please report any bugs you encounter
+on the [github issue's page](https://github.com/caddellchess/caddell-chess/issues).
+
+**Partial Future Browser Features Planned**
+
 - read info about engines, pesonalities, and books
 - set more options for the engine than are exposed on the stand alone device
 
@@ -242,3 +257,7 @@ be found in this project's package.json file.
 
 And last but far from least, a huge debt of gratitude is due to the chess engines that are readily available. Caddell
 would be at best a proof-of-concept project only without a chess engine to actually play a game against.
+
+[^1]: [https://en.wikipedia.org/wiki/Relay_race](https://en.wikipedia.org/wiki/Relay_race)
+
+[^2]: [Ovyron's inspirational reply on the Computer Chess Club forum](http://www.talkchess.com/forum3/viewtopic.php?f=2&t=65485&sid=c8d8aa3e084d8dec1510c7c578eab9b4&start=70#p736434)

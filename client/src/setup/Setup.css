@@ -12,10 +12,24 @@
   overflow-y: auto;
 }
 
-.color, .engine-choice, .setup .opening-book {
+.color, .engine-choice, .setup .opening-book, .relay {
   display: flex;
   flex-direction: row;
   margin: auto 20px;
+  flex-wrap: wrap;
+}
+
+.relay {
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.relay label {
+  margin-right: 8px;
+}
+
+.relay-check {
+  margin-top: -8px;
 }
 
 .color p {
