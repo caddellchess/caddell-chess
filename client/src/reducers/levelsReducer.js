@@ -5,7 +5,8 @@ const getInitialState = () => ({
   levels: [],
   engineDefaults: [],
   personalities: {},
-  engineHasPersonalities: false
+  engineHasPersonalities: false,
+  engine: ''
 });
 
 const actionHandlers = {
@@ -15,6 +16,7 @@ const actionHandlers = {
     newState.engineDefaults = payload.engineLevels.engineDefaults;
     newState.engineHasPersonalities = payload.engineLevels.engineHasPersonalities;
     newState.personalities = payload.personalities;
+    newState.engine = payload.engine;
     return newState;
   }
 };

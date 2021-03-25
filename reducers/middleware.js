@@ -54,9 +54,26 @@ function middleware({ getState, dispatch }) {
       }; // dubious at best... but for now it works
     }
 
-    if (action.type == actions.START_UP || action.type == actions.NEW_GAME) {
+    initEngine: if (action.type == actions.START_UP || action.type == actions.NEW_GAME || action.type == actions.LOAD_NEW_ENGINE) {
       const state = getState();
-      const engineFile = state.currentGame.engine.filename;
+      if (action.type == actions.LOAD_NEW_ENGINE && state.currentGame.gamePhase == state.currentGame.lastMoveGamePhase) {
+        break initEngine;
+      }
+
+      let engineFile;
+      const { gamePhase } = state.currentGame;
+      if (state.currentGame.relayChess && state.currentGame.gamePhase != state.currentGame.lastMoveGamePhase) {
+        engineFile = state.currentGame.relayEngine[gamePhase].filename;
+      } else {
+        engineFile = state.currentGame.engine.filename;
+      }
+      if (!state.gamePlay.gameMoves.length) {
+        await nextion.setPage('1');
+        await nextion.setValue('page1.t0.font', '2');
+        await nextion.setValue('page1.t0.pco', '65504');
+        await nextion.setValue('page1.t0.txt', '"loading..."');
+        await nextion.setScreenBrightness('100');
+      }
       engine = await new Engine(`./engines/armv7l/${engineFile}`);
     }
 

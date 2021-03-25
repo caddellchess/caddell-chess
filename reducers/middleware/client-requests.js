@@ -16,20 +16,28 @@ const clientRequests = (dispatch, getState, engine, chess, nextion) => async act
 
     dispatch({
       type: actions.LOAD_LEVELS,
-      payload: { engineLevels, personalities }
+      payload: { engine, engineLevels, personalities }
     });
   }
 
   if (action.type == actions.CLIENT_START_GAME) {
-    const { isPlayerWhite, engine, openingBook, personality, useBook } = action.payload;
+    const {
+      isPlayerWhite,
+      engine,
+      openingBook,
+      useBook,
+      relayChess = false,
+      relayEngine = {}
+    } = action.payload;
     await dispatch({
       type: actions.APPLY_SETTINGS,
       payload: {
         isPlayerWhite,
         engine,
         openingBook,
-        personality,
-        useBook
+        useBook,
+        relayChess,
+        relayEngine
       }
     });
     await dispatch({ type: actions.CLEAR_GAME });

@@ -39,6 +39,8 @@ const getInitialState = () => ({
       name: 'No book',
       filename: 'nobook.bin'
     },
+    currentEngine: 'Stockfish 12',
+    currentLevel: 'Level 00',
     engine: {
       hmi: 'Stockfish 12',
       filename: 'a-stockf',
@@ -166,6 +168,13 @@ const actionHandlers = {
     return newState;
   },
 
+  [actions.UPDATE_CLIENT_ENGINE]: (state, {payload}) => {
+    const newState = Object.assign({}, state);
+    newState.currentGame.currentEngine = payload.engine;
+    newState.currentGame.currentLevel = payload.level;
+    return newState;
+  },
+
   [actions.PRIME_GUI]: (state, {payload}) => {
     const newState = Object.assign({}, state);
     newState.gamePlay = payload.gamePlay;
@@ -174,7 +183,8 @@ const actionHandlers = {
     newState.system = payload.system;
     newState.loading = false;
     return newState;
-  }
+  },
+
 }
 
 export default createReducer(getInitialState(), actionHandlers);

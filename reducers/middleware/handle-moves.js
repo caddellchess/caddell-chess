@@ -49,7 +49,7 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
     await dispatch({ type: actions.VERIFY_MOVE, payload: { move: usermove }});
     const gameOverReason = checkForGameOver();
     if (gameOverReason) {
-      dispatch({ type: actions.GAME_OVER, payload: { reason: gameOverReason }});
+      await dispatch({ type: actions.GAME_OVER, payload: { reason: gameOverReason }});
       dispatch({ type: actions.SHOW_GAME_OVER});
     }
   }
@@ -65,6 +65,8 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
       dispatch({ type: actions.INVALID_MOVE });
     } else {
       await dispatch({ type: actions.APPEND_MOVE, payload: { move: usermove }});
+      await dispatch({ type: actions.FIND_GAME_PHASE, payload: { fen: chess.fen() }});
+      await dispatch({ type: actions.LOAD_NEW_ENGINE });
       dispatch({ type: actions.PLAY_ENGINE });
     }
     promoteToPiece(false);
@@ -110,7 +112,7 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
     dispatch({ type: actions.EVAL_BLUNDER });
     const gameOverReason = checkForGameOver();
     if (gameOverReason) {
-      dispatch({ type: actions.GAME_OVER, payload: { reason: gameOverReason }});
+      await dispatch({ type: actions.GAME_OVER, payload: { reason: gameOverReason }});
       dispatch({ type: actions.SHOW_GAME_OVER});
     }
   }
@@ -135,6 +137,8 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
       dispatch({ type: actions.INVALID_MOVE });
     } else {
       await dispatch({ type: actions.APPEND_MOVE, payload: { move: usermove } });
+      await dispatch({ type: actions.FIND_GAME_PHASE, payload: { fen: chess.fen() }});
+      await dispatch({ type: actions.LOAD_NEW_ENGINE });
       dispatch({ type: actions.PLAY_ENGINE });
     }
 
@@ -152,6 +156,8 @@ const handleMoves = (dispatch, getState, engine, chess, nextion) => async action
   }
 
   if (action.type == actions.ENGINE_MOVE) {
+    await dispatch({ type: actions.FIND_GAME_PHASE, payload: { fen: chess.fen() } });
+    await dispatch({ type: actions.LOAD_NEW_ENGINE });
     dispatch({ type: actions.SHOW_EVAL });
   }
 }

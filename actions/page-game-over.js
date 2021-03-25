@@ -4,7 +4,7 @@ const actions = require('./actions');
 const pageGameOver = dispatch => data => {
   switch (data.buttonId) {
     case 1:
-      dispatch({ type: actions.NEW_GAME });
+      dispatch({ type: actions.START_NEW_GAME });
       break;
     case 2:
       dispatch({ type: actions.POWER_DOWN });

@@ -1,24 +1,45 @@
 const actions = require('../../actions/actions');
 
 const initialize = (dispatch, getState, engine, chess, nextion) => async action => {
-  if (action.type == actions.START_UP || action.type == actions.NEW_GAME) {
+  const getCurrentEngine = () => {
+    const currentState = getState();
+    const { currentGame } = currentState;
+    if (currentGame.relayChess) {
+      return currentGame.relayEngine[currentGame.gamePhase];
+    }
+    return currentGame.engine;
+  }
+
+  initEngine: if (
+    action.type == actions.START_UP ||
+    action.type == actions.NEW_GAME ||
+    action.type == actions.LOAD_NEW_ENGINE
+    ) {
     const state = getState();
+    if (action.type == actions.LOAD_NEW_ENGINE && state.currentGame.gamePhase == state.currentGame.lastMoveGamePhase) {
+      break initEngine;
+    }
     const isPlayerWhite = state.currentGame.isPlayerWhite;
-    chess.reset();
+    !actions.LOAD_NEW_ENGINE && chess.reset();
     //chess.load('8/P4r2/4k3/8/8/4K3/5B2/8 w - - 0 1'); // TODO REMOVE FEN, this is for testing
     await engine.init();
     await engine.isready();
     await engine.ucinewgame();
     await engine.isready();
-    await nextion.setValue('page1.t2.txt', '""');
-    await nextion.setValue('page1.t3.txt', '""');
-    await nextion.setValue('page1.t5.txt', '""');
-    await nextion.setValue('page1.t0.font', '1');
-    await nextion.setValue('page1.t0.pco', '65504');
-    await nextion.setValue('page1.t0.txt', '"your move"');
+    if (action.type != actions.LOAD_NEW_ENGINE) {
+      await nextion.setValue('page1.t2.txt', '""');
+      await nextion.setValue('page1.t3.txt', '""');
+      await nextion.setValue('page1.t5.txt', '""');
+      await nextion.setValue('page1.t0.font', '1');
+      await nextion.setValue('page1.t0.pco', '65504');
+      if (isPlayerWhite) {
+        await nextion.setValue('page1.t0.txt', '"your move"');
+      }
+    }
 
+    const currentEngine = getCurrentEngine();
     // set defaults
-    const engineDefaults = state.currentGame.engine.engineDefaults;
+    const engineDefaults = currentEngine.engineDefaults;
     for (const defaultOption of engineDefaults) {
       await engine.setoption(defaultOption.key, defaultOption.value);
     }
@@ -27,7 +48,7 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
     await engine.setoption('MultiPV', 4);
 
     // set level
-    const level = state.currentGame.engine.level;
+    const level = currentEngine.level;
     if (!level.hasOwnProperty('mri')) {
       level.mri = [];
     }
@@ -36,9 +57,9 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
     }
 
     // set personality
-    const engineHasPersonalities = state.currentGame.engine.engineHasPersonalities;
+    const engineHasPersonalities = currentEngine.engineHasPersonalities;
     if (engineHasPersonalities) {
-      const personality = state.currentGame.engine.personality.mri;
+      const personality = currentEngine.personality.mri;
       await engine.setoption('Verbose', true);
       await engine.setoption('PersonalityFile', `${__dirname}/../../engines/rodent4/personalities/${personality}`);
     }
@@ -57,14 +78,16 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
     }
   }
 
-  if (action.type == actions.SHOW_ENGINE) {
+  if (action.type == actions.SHOW_ENGINE || action.type == actions.LOAD_NEW_ENGINE) {
     const state = getState();
+    const currentEngine = getCurrentEngine();
+    const level = currentEngine.level;
     const engineId = engine.id;
-    const engineLevel = `${state.currentGame.engine.level.hmi}`;
-    const engineHasPersonalities = state.currentGame.engine.engineHasPersonalities;
+    const engineLevel = level.hmi;
+    const engineHasPersonalities = currentEngine.engineHasPersonalities;
     let engineText = '';
     if (engineHasPersonalities) {
-      const personality = state.currentGame.engine.personality.name;
+      const personality = currentEngine.personality.name;
       engineText = `"${engineId.name} - ${engineLevel} - ${personality}"`;
     } else if (engineLevel && engineLevel != 'undefined') {
       engineText =`"${engineId.name} - ${engineLevel}"`;
@@ -72,6 +95,13 @@ const initialize = (dispatch, getState, engine, chess, nextion) => async action 
       engineText = `"${engineId.name}"`;
     }
     await nextion.setValue('page1.t1.txt', engineText);
+    dispatch({
+      type: actions.UPDATE_CLIENT_ENGINE,
+      payload: {
+        engine: engineId.name,
+        level: engineLevel
+      }
+    });
   }
 };
 
